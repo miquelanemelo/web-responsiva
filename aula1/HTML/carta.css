@@ -1,0 +1,41 @@
+body{
+
+margin-left: 25%;
+}
+.all {
+    font-family: "Courier New";
+    width: 595px;
+    height: 842px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.date {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h2 {
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+.hello {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.text {
+    text-align: justify;
+    margin-bottom: 30px;
+    text-indent: 50px;
+    line-height: 2;
+}
+
+.bye {
+    margin-bottom: 15px;
+}
+
+p {
+    margin: 0px;
+}

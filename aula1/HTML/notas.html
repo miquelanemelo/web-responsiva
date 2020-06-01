@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <style>
+      body {
+        margin-top: 15px;
+      }
+    </style>
+  <script>
+
+    function calcularMedia() {
+
+      var table = document.getElementById("tabela");
+
+      for (var i = 1, row; row = table.rows[i]; i++) {
+
+        var tr = table.rows[i];
+        var total = 0;
+        for (var j = 1; j <= 3; j++) {
+          td = tr.cells[j];
+          if (td.children[0].value != null && td.children[0].value != undefined) {
+            total += parseInt(td.children[0].value);
+          }
+        }
+
+        for (var k = 5; k >= 4; k--) {
+          td = tr.cells[k];
+          if (k === 4) {
+            td.children[0].value = total / 3;
+          }
+        }
+      }
+
+    }
+
+    function limpar() {
+      var table = document.getElementById("tabela");
+      for (var i = 1, row; row = table.rows[i]; i++) {
+        var tr = table.rows[i];
+        for (var j = 1, td; td = tr.cells[j]; j++) {
+          td.children[0].value = null;
+        }
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Selecione a Disciplina:</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Selecione...</option>
+            <option value="1">Introdução à informática</option>
+            <option value="2">Linguagens de Programação</option>
+            <option value="3">Programação de Computadores</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <table id="tabela" class="table">
+          <tr class="thead-light">
+            <th>Nome do Aluno</th>
+            <th>Prova 1</th>
+            <th>Prova 2</th>
+            <th>Exame</th>
+            <th>Média</th>
+            <th>Faltas</th>
+          </tr>
+          <tr>
+            <td>Joana</td>
+            <td><input class="form-control" type="number" min="0" max="10"></td>
+            <td><input class="form-control" type="number" min="0" max="10"></td>
+            <td><input class="form-control" type="number" min="0" max="10"></td>
+            <td><input class="form-control" type="number" readonly min="0" max="10"></td>
+            <td><input class="form-control" type="number" min="0" max="16"></td>
+          </tr>
+            <tr>
+            <td>Maria do Socorro</td>
+            <td><input class="form-control" type="number" min="0" max="10"></td>
+            <td><input class="form-control" type="number" min="0" max="10"></td>
+            <td><input class="form-control" type="number" min="0" max="10"></td>
+            <td><input class="form-control" type="number" readonly min="0" max="10"></td>
+            <td><input class="form-control" type="number" min="0" max="16"></td>
+             
+          </tr>
+          <tr>
+            <td>Pedro</td>
+            <td><input class="form-control" type="number" min="0" max="10"></td>
+            <td><input class="form-control" type="number" min="0" max="10"></td>
+            <td><input class="form-control" type="number" min="0" max="10"></td>
+            <td><input class="form-control" type="number" readonly min="0" max="10"></td>
+            <td><input class="form-control" type="number" min="0" max="16"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+        <button type="button" class="btn btn-success" onclick="calcularMedia()">Salvar</button>
+        <button type="button" class="btn btn-outline-dark" onclick="limpar()">Limpar</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
